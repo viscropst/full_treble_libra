@@ -1,2 +1,0 @@
-type debugfs_rpm, debugfs_type, fs_type;
-type double_tap_enable_proc, fs_type;

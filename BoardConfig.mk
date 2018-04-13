@@ -72,6 +72,7 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 
 # Charger
+BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_NO_UI:=false
 
@@ -149,12 +150,12 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_HW_DISK_ENCRYPTION := true
-TARGET_CRYPTFS_HW_PATH := $(DEVICE_PATH)/cryptfs_hw
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 TARGET_PER_MGR_ENABLED := true
 
 # Power
-TARGET_SET_PROFILE:= true
-TARGET_HAS_LEGACY_POWER_STATS:= true
+BOARD_POWER_CUSTOM_BOARD_LIB+=$(DEVICE_PATH)/modules/power/power-libra.c
+TARGET_USES_INTERACTION_BOOST:=true
 TARGET_HAS_NO_WIFI_STATS:= true
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchscreen/double_tap_enable"
 
@@ -171,9 +172,7 @@ BOARD_PROVIDES_LIBRIL := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-include device/xiaomi/libra/sepolicy/legacy/legacy-sepolicy.mk
-include device/xiaomi/libra/sepolicy/oth/common/sepolicy.mk
-include device/xiaomi/libra/sepolicy/oth/qcom/sepolicy.mk
+include device/qcom/sepolicy/legacy-sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Vendor init

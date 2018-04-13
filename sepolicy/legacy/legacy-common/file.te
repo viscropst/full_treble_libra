@@ -1,4 +1,0 @@
-type sysfs_runtime_status, sysfs_type, fs_type;
-#uio sysfs
-type sysfs_uio_file, fs_type, sysfs_type;
-
