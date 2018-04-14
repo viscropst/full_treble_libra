@@ -34,6 +34,8 @@ $(call inherit-product, hardware/qcom/msm8994/msm8992.mk)
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/xiaomi/libra/device.mk)
 
+$(call set-device-specific-path,POWER,power,hardware/qcom/power)
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080

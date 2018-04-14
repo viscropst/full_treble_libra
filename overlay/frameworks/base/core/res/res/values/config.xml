@@ -327,6 +327,16 @@
 
     <!-- Flag specifying whether WFC over IMS is available on device -->
     <bool name="config_device_wfc_ims_available">true</bool>
+    
+    <!-- Flag specifying whether VT should be available for carrier: independent of
+         carrier provisioning. If false: hard disabled. If true: then depends on carrier
+         provisioning, availability etc -->
+    <bool name="config_carrier_vt_available">true</bool>
+    
+    <!-- Flag specifying whether VoLTE should be available for carrier: independent of
+         carrier provisioning. If false: hard disabled. If true: then depends on carrier
+         provisioning, availability etc -->
+    <bool name="config_carrier_volte_available">true</bool>
 
     <!-- Flag specifying that this device will NOT use the "allow_hold_in_ims_call" carrier config
          option. -->
@@ -391,7 +401,15 @@
          config to 7. -->
     <integer name="config_deviceHardwareKeys">83</integer>
     
-    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
+    <!-- Keep chosen default camera app pinned in memory for faster launching -->
+    <bool name="config_pinnerCameraApp">true</bool>
+
+    <bool name="config_button_brightness_support">true</bool>
+    <integer name="config_button_brightness_default">128</integer>
+    
+    <!-- Do the battery/notification LEDs support pulsing?
+         Used to decide if we show pulse settings -->
+    <bool name="config_ledCanPulse">true</bool>
     
     <!-- Whether device has dash charging support -->
     <bool name="config_hasDashCharger">true</bool>
