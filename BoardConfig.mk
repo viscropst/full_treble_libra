@@ -57,6 +57,11 @@ BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_GENERIC_AUDIO := true
 USE_XML_AUDIO_POLICY_CONF := 1
 
+# Bionic
+TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib64/libril-qc-qmi-1.so|rild_socket.so \
+    /system/vendor/lib/libmmcamera2_stats_algorithm.so|libshim_atomic.so
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
@@ -154,9 +159,7 @@ TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 TARGET_PER_MGR_ENABLED := true
 
 # Power
-BOARD_POWER_CUSTOM_BOARD_LIB+=$(DEVICE_PATH)/modules/power/power-libra.c
 TARGET_USES_INTERACTION_BOOST:=true
-TARGET_HAS_NO_WIFI_STATS:= true
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchscreen/double_tap_enable"
 
 # Properties

@@ -54,4 +54,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=libra
 PRODUCT_PROPERTY_OVERRIDES += \
      ro.carbon.maintainer="viscropst"
 
+TARGET_SET_PROFILE:=true
 
+
+TARGET_OTA_ASSERT_DEVICE := libra
